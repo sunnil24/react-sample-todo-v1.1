@@ -38,6 +38,22 @@ export default function ToDoList() {
     [todos]
   );
 
+  const editHandler = useCallback(
+    (id, title) => {
+      const newData = todos.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            title
+          };
+        }
+        return item;
+      });
+      updateToDos(dispatch, newData);
+    },
+    [todos]
+  );
+
   return (
     <>
       <ol className="todo-list">
@@ -55,6 +71,7 @@ export default function ToDoList() {
                 item={item}
                 toggleHandler={toggleToDo}
                 deleteHandler={deleteToDo}
+                editHandler={editHandler}
               />
             </li>
           ))}
