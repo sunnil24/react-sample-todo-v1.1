@@ -28,3 +28,18 @@ body {
 .completed .todo-text {
   text-decoration: line-through;
 }
+
+.load-more {
+  width: 100px;
+  background-color: blue;
+  border: none;
+  padding: 1rem 0.5rem;
+  color: white;
+  margin: 1rem auto;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+}

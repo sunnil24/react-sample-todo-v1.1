@@ -59,7 +59,17 @@ export default function ToDoList() {
             </li>
           ))}
       </ol>
-      <button type="button">Load More</button>
+      <section className="pagination">
+        {page * 10 < todos.length && (
+          <button
+            className="load-more"
+            type="button"
+            onClick={() => setPage(prevPage => prevPage + 1)}
+          >
+            Load More
+          </button>
+        )}
+      </section>
     </>
   );
 }
